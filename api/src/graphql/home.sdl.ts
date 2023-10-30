@@ -10,7 +10,7 @@ export const schema = gql`
   }
 
   type Query {
-    homes: [Home!]!
-    home(id: Int!): Home!
+    homes: [Home!]! @skipAuth
+    home(id: Int!): Home! @skipAuth
   }
 `
