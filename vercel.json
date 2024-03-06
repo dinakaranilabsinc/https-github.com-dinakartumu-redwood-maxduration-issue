@@ -3,6 +3,10 @@
     "api/src/functions/graphql.*": {
       "maxDuration": 120,
       "runtime": "@vercel/redwood@2.0.5"
+    },
+    "api/src/functions/inngest.*": {
+      "maxDuration": 120,
+      "runtime": "@vercel/redwood@2.0.5"
     }
   }
 }

@@ -13,7 +13,16 @@ const GET_HOMES = gql`
 const HomePage = () => {
   const { data, loading } = useQuery(GET_HOMES)
 
-  console.log({ data, loading })
+  const test = async () => {
+    try {
+      const response = await fetch(`/api/inngest`)
+      console.log({ response })
+    } catch (error) {
+      console.error('Error getting Salesforce tokens:', error)
+      throw error
+    }
+  }
+
   return (
     <>
       <MetaTags title="Home" description="Home page" />
@@ -24,6 +33,9 @@ const HomePage = () => {
       ) : (
         <div>loading...</div>
       )}
+      <button type="button" onClick={test}>
+        Check this
+      </button>
     </>
   )
 }
